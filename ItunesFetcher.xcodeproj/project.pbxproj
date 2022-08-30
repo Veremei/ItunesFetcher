@@ -33,6 +33,8 @@
 		BAF5B03A28BE47FD009736F6 /* SongContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B03928BE47FD009736F6 /* SongContent.swift */; };
 		BAF5B03E28BE6014009736F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BAF5B03D28BE6014009736F6 /* Kingfisher */; };
 		BAF5B04028BE631F009736F6 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B03F28BE631F009736F6 /* SearchRouter.swift */; };
+		BAF5B04228BE6C28009736F6 /* SearchSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B04128BE6C28009736F6 /* SearchSceneBuilder.swift */; };
+		BAF5B04628BE6D51009736F6 /* FavoritesSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B04528BE6D51009736F6 /* FavoritesSceneBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		BAF5B03728BE4246009736F6 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		BAF5B03928BE47FD009736F6 /* SongContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongContent.swift; sourceTree = "<group>"; };
 		BAF5B03F28BE631F009736F6 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		BAF5B04128BE6C28009736F6 /* SearchSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneBuilder.swift; sourceTree = "<group>"; };
+		BAF5B04528BE6D51009736F6 /* FavoritesSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSceneBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 				BAF5B02528BE2E27009736F6 /* SearchInteractor.swift */,
 				BAF5B02C28BE37FF009736F6 /* SearchPresenter.swift */,
 				BAF5B03F28BE631F009736F6 /* SearchRouter.swift */,
+				BAF5B04128BE6C28009736F6 /* SearchSceneBuilder.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				BA9BEB0928BD640D009DD9FD /* FavoritesViewController.swift */,
 				BAF5B02E28BE396C009736F6 /* FavoritesInteractor.swift */,
 				BAF5B03028BE3973009736F6 /* FavoritesPresenter.swift */,
+				BAF5B04528BE6D51009736F6 /* FavoritesSceneBuilder.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				BAF5B03828BE4246009736F6 /* FavoritesStore.swift in Sources */,
 				BAF5B03628BE41AB009736F6 /* Storage.swift in Sources */,
 				BAF5B02F28BE396C009736F6 /* FavoritesInteractor.swift in Sources */,
+				BAF5B04228BE6C28009736F6 /* SearchSceneBuilder.swift in Sources */,
 				BAF5B02D28BE37FF009736F6 /* SearchPresenter.swift in Sources */,
 				BAF5B03A28BE47FD009736F6 /* SongContent.swift in Sources */,
 				BA7900DE28BCBC5400640BF5 /* SearchViewController.swift in Sources */,
@@ -424,6 +431,7 @@
 				BAF5B02628BE2E27009736F6 /* SearchInteractor.swift in Sources */,
 				BA9BEB0628BD53C7009DD9FD /* ItunesSearchResponse.swift in Sources */,
 				BA53A23828BBCD0F007FC692 /* NetworkService.swift in Sources */,
+				BAF5B04628BE6D51009736F6 /* FavoritesSceneBuilder.swift in Sources */,
 				BA49028928BB9383000370E9 /* SceneDelegate.swift in Sources */,
 				BAF5B03328BE3D28009736F6 /* AppServices.swift in Sources */,
 				BA9BEB0A28BD640D009DD9FD /* FavoritesViewController.swift in Sources */,

@@ -11,21 +11,26 @@ final class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewControllers = [makeSearch(), makeFavorites()]
+    }
 
-        let search = SearchViewController()
+    func makeSearch() -> UIViewController {
+        let search = SearchSceneBuilder.make()
         let searchNavigation = UINavigationController(rootViewController: search)
+
         searchNavigation.title = "Search"
         searchNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
 
+        return searchNavigation
+    }
 
-
-        let favorites = FavoritesViewController()
+    func makeFavorites() -> UIViewController {
+        let favorites = FavoritesSceneBuilder.make()
         let favoritesNavigation = UINavigationController(rootViewController: favorites)
 
         favoritesNavigation.title = "Favorites"
         favoritesNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
 
-        viewControllers = [searchNavigation, favoritesNavigation]
+        return favoritesNavigation
     }
-
 }
