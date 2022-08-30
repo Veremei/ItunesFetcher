@@ -70,8 +70,8 @@ extension SongListCollectionViewController: UICollectionViewDataSource {
                        isFavorite: FavoritesService.shared.savedSongs
             .contains(where: { $0.trackId == item.trackId }))
 
-        songCell.accessoryTapped = {
-            FavoritesService.shared.save(song: item)
+        songCell.accessoryTapped = { isFavorite in
+            FavoritesService.shared.updateState(for: item, isSelected: isFavorite)
         }
 
         return songCell

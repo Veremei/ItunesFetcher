@@ -16,7 +16,18 @@ final class FavoritesService {
 
     private init() {}
 
-    func save(song: ItunesSearchResult) {
+
+    func updateState(for song: ItunesSearchResult, isSelected: Bool) {
+        isSelected
+        ? save(song: song)
+        : remove(song: song)
+    }
+
+    private func save(song: ItunesSearchResult) {
         savedSongs.append(song)
+    }
+
+    private func remove(song: ItunesSearchResult) {
+        savedSongs.removeAll(where: { $0.trackId == song.trackId })
     }
 }

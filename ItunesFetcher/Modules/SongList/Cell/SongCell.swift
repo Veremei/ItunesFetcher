@@ -22,7 +22,7 @@ final class SongCell: UICollectionViewCell {
     @IBOutlet private weak var songAuthorLabel: UILabel!
     @IBOutlet private weak var accessoryButton: UIButton!
 
-    var accessoryTapped: (() -> Void)? = nil
+    var accessoryTapped: ((Bool) -> Void)? = nil
 
     private var isFavorite = false {
         didSet {
@@ -49,7 +49,7 @@ final class SongCell: UICollectionViewCell {
     @IBAction private func accessoryButtonTapped(_ sender: Any) {
         isFavorite = !isFavorite
         if let accessoryTapped = accessoryTapped {
-            accessoryTapped()
+            accessoryTapped(isFavorite)
         }
     }
 }
