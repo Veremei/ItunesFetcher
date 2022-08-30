@@ -20,10 +20,12 @@ protocol NetworkServiceProtocol {
 }
 
 class NetworkService: NetworkServiceProtocol {
-    static let shared = NetworkService()
-    private init() { }
 
-    private let urlSession = URLSession.shared
+    private let urlSession: URLSession
+
+    init(urlSession: URLSession) {
+        self.urlSession = urlSession
+    }
     
     func request(endpoint: Endpoint) -> AnyPublisher<Data, Error> {
         guard let url = endpoint.url else {
@@ -36,7 +38,7 @@ class NetworkService: NetworkServiceProtocol {
         endpoint.headers.forEach {
             urlRequest.setValue($0.value, forHTTPHeaderField: $0.key)
         }
-        print("Requested url", url)
+        
         return urlSession.dataTaskPublisher(for: urlRequest)
             .map(\.data)
             .mapError{ $0 as Error }

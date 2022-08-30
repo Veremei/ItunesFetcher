@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol SongListDelegate: AnyObject {
+    func didMarkFavorite(song: SongContent)
+}
+
 final class SongListCollectionViewController: UIViewController {
     private enum Constants {
-        static let reuseIdentifier = "SongCell"
+        static let cellId = "SongCell"
     }
+
+    weak var delegate: SongListDelegate?
 
     private lazy var collection: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -20,12 +26,12 @@ final class SongListCollectionViewController: UIViewController {
         layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UINib(nibName: "SongCell", bundle: nil), forCellWithReuseIdentifier: Constants.reuseIdentifier)
+        collectionView.register(UINib(nibName: Constants.cellId, bundle: nil), forCellWithReuseIdentifier: Constants.cellId)
         collectionView.keyboardDismissMode = .onDrag
         return collectionView
     }()
 
-    private var songs: [ItunesSearchResult] = []
+    private var songs: [SongContent] = []
 
 
     override func viewDidLoad() {
@@ -34,7 +40,6 @@ final class SongListCollectionViewController: UIViewController {
     }
 
     private func setupCollection() {
-        collection.delegate = self
         collection.dataSource = self
 
         view.addSubview(collection)
@@ -47,11 +52,6 @@ final class SongListCollectionViewController: UIViewController {
         ])
 
     }
-
-    func updateSongs(songs: [ItunesSearchResult]) {
-        self.songs = songs
-        collection.reloadData()
-    }
 }
 
 extension SongListCollectionViewController: UICollectionViewDataSource {
@@ -60,26 +60,26 @@ extension SongListCollectionViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellId, for: indexPath)
 
         guard let songCell = cell as? SongCell else {
             return cell
         }
         let item = songs[indexPath.item]
-        songCell.setup(from: item,
-                       isFavorite: FavoritesService.shared.savedSongs
-            .contains(where: { $0.trackId == item.trackId }))
+        songCell.setup(from: item)
 
-        songCell.accessoryTapped = { isFavorite in
-            FavoritesService.shared.updateState(for: item, isSelected: isFavorite)
+        songCell.accessoryTapped = { [weak self] in
+            self?.delegate?.didMarkFavorite(song: item)
         }
 
         return songCell
     }
+
 }
 
-
-
-extension SongListCollectionViewController: UICollectionViewDelegate {
-
+extension SongListCollectionViewController {
+    func updateSongs(songs: [SongContent]) {
+        self.songs = songs
+        collection.reloadData()
+    }
 }

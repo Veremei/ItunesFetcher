@@ -7,13 +7,6 @@
 
 import UIKit
 
-struct SongCellContent {
-    let id: String
-    let image: URL?
-    let title: String?
-    let subtitle: String?
-}
-
 final class SongCell: UICollectionViewCell {
 
     @IBOutlet private weak var songImageView: UIImageView!
@@ -22,7 +15,7 @@ final class SongCell: UICollectionViewCell {
     @IBOutlet private weak var songAuthorLabel: UILabel!
     @IBOutlet private weak var accessoryButton: UIButton!
 
-    var accessoryTapped: ((Bool) -> Void)? = nil
+    var accessoryTapped: (() -> Void)? = nil
 
     private var isFavorite = false {
         didSet {
@@ -40,16 +33,16 @@ final class SongCell: UICollectionViewCell {
         isFavorite = false
     }
 
-    func setup(from content: ItunesSearchResult, isFavorite: Bool) {
-        songNameLabel.text = content.trackName
-        songAuthorLabel.text = content.artistName
-        self.isFavorite = isFavorite
+    func setup(from content: SongContent) {
+        songNameLabel.text = content.title
+        songAuthorLabel.text = content.subtitle
+        isFavorite = content.isFavorite
     }
 
     @IBAction private func accessoryButtonTapped(_ sender: Any) {
         isFavorite = !isFavorite
         if let accessoryTapped = accessoryTapped {
-            accessoryTapped(isFavorite)
+            accessoryTapped()
         }
     }
 }
