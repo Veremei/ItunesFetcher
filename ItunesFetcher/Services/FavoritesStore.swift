@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Implement Core Data store
 protocol FavoritesStoreProtocol {
     var songContentPublisher: Published<[SongContent]>.Publisher { get }
 

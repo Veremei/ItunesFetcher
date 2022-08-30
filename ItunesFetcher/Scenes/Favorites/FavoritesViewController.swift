@@ -20,18 +20,8 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        collection.delegate = self
-
-        addChild(collection)
-        collection.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collection.view)
-        NSLayoutConstraint.activate([
-            collection.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collection.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collection.view.topAnchor.constraint(equalTo: view.topAnchor),
-            collection.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        setupUI()
+        interactor?.fetchSongs()
     }
 
     init() {
@@ -53,9 +43,19 @@ final class FavoritesViewController: UIViewController {
         presenter.viewController = viewController
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        interactor?.fetchSongs()
+    private func setupUI() {
+        collection.delegate = self
+
+        addChild(collection)
+        collection.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collection.view)
+        NSLayoutConstraint.activate([
+            collection.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collection.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collection.view.topAnchor.constraint(equalTo: view.topAnchor),
+            collection.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
     }
 }
 

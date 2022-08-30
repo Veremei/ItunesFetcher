@@ -19,7 +19,6 @@ final class SearchViewController: UIViewController {
     var router: SearchRoutingLogic?
 
     private let collection = SongListCollectionViewController()
-
     private(set) lazy var searchController: UISearchController = {
         var controller = UISearchController(searchResultsController: nil)
         controller.searchResultsUpdater = self
@@ -44,6 +43,11 @@ final class SearchViewController: UIViewController {
         setup()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+
     private func setup() {
         let viewController = self
         let interactor = SearchInteractor(networking: AppServices.shared.networkService,
@@ -57,9 +61,7 @@ final class SearchViewController: UIViewController {
         router.source = viewController
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func setupUI() {
         collection.delegate = self
 
         addChild(collection)

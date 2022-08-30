@@ -74,7 +74,6 @@ extension SongListCollectionViewController: UICollectionViewDataSource {
 
         return songCell
     }
-
 }
 
 extension SongListCollectionViewController {

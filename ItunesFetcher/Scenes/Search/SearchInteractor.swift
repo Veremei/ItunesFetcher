@@ -23,18 +23,15 @@ final class SearchInteractor: SearchInteractorLogic {
 
     private var songs: [ItunesSearchResult] = [] {
         didSet {
-            let songsContent = songs.map({
-                SongContent(id: $0.trackId,
-                            image: URL(string: $0.artworkUrl60 ?? ""),
-                            title: $0.trackName,
-                            subtitle: $0.artistName,
-                            isFavorite: self.isFavorite(id: $0.trackId))
-            })
-            presenter?.presentSongs(songs: songsContent)
+            updateSongs()
         }
     }
     
-    private var favorites: [SongContent] = []
+    private var favorites: [SongContent] = [] {
+        didSet {
+            updateSongs()
+        }
+    }
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -118,6 +115,17 @@ final class SearchInteractor: SearchInteractorLogic {
                 print("response", response)
                 self.songs = response.results
             }.store(in: &cancellables)
+    }
+
+    private func updateSongs() {
+        let songsContent = songs.map({
+            SongContent(id: $0.trackId,
+                        image: URL(string: $0.artworkUrl60 ?? ""),
+                        title: $0.trackName,
+                        subtitle: $0.artistName,
+                        isFavorite: self.isFavorite(id: $0.trackId))
+        })
+        presenter?.presentSongs(songs: songsContent)
     }
 
     private func isFavorite(id: Int) -> Bool {

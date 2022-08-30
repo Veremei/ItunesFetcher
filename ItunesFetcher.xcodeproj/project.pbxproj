@@ -135,7 +135,7 @@
 			children = (
 				BAD1B20228BE0E7900018C7A /* Application */,
 				BA53A23E28BBECD3007FC692 /* Model */,
-				BA53A23D28BBECCE007FC692 /* Service */,
+				BA53A23D28BBECCE007FC692 /* Services */,
 				BA53A23F28BBECD6007FC692 /* Scenes */,
 				BAF5B03428BE419C009736F6 /* Utility */,
 				BAD1B20328BE0EE600018C7A /* Resources */,
@@ -160,14 +160,14 @@
 			path = ItunesFetcherUITests;
 			sourceTree = "<group>";
 		};
-		BA53A23D28BBECCE007FC692 /* Service */ = {
+		BA53A23D28BBECCE007FC692 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				BAF5B03228BE3D28009736F6 /* AppServices.swift */,
 				BA53A23728BBCD0F007FC692 /* NetworkService.swift */,
 				BAF5B03728BE4246009736F6 /* FavoritesStore.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BA53A23E28BBECD3007FC692 /* Model */ = {
