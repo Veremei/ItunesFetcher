@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA3426D828BDF90F0014E288 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3426D728BDF90F0014E288 /* TabBarController.swift */; };
 		BA49028728BB9383000370E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49028628BB9383000370E9 /* AppDelegate.swift */; };
 		BA49028928BB9383000370E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49028828BB9383000370E9 /* SceneDelegate.swift */; };
-		BA49028B28BB9383000370E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49028A28BB9383000370E9 /* ViewController.swift */; };
-		BA49028E28BB9383000370E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA49028C28BB9383000370E9 /* Main.storyboard */; };
 		BA49029028BB9385000370E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA49028F28BB9385000370E9 /* Assets.xcassets */; };
 		BA49029328BB9385000370E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA49029128BB9385000370E9 /* LaunchScreen.storyboard */; };
 		BA49029E28BB9385000370E9 /* ItunesFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49029D28BB9385000370E9 /* ItunesFetcherTests.swift */; };
 		BA4902A828BB9386000370E9 /* ItunesFetcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4902A728BB9386000370E9 /* ItunesFetcherUITests.swift */; };
 		BA4902AA28BB9386000370E9 /* ItunesFetcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4902A928BB9386000370E9 /* ItunesFetcherUITestsLaunchTests.swift */; };
+		BA53A23828BBCD0F007FC692 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53A23728BBCD0F007FC692 /* NetworkService.swift */; };
+		BA53A23A28BBE6BF007FC692 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53A23928BBE6BF007FC692 /* Endpoint.swift */; };
+		BA53A23C28BBECC2007FC692 /* SongListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53A23B28BBECC2007FC692 /* SongListCollectionViewController.swift */; };
+		BA53A24428BBED6E007FC692 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53A24228BBED6E007FC692 /* SongCell.swift */; };
+		BA53A24528BBED6E007FC692 /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA53A24328BBED6E007FC692 /* SongCell.xib */; };
+		BA7900DE28BCBC5400640BF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7900DC28BCBC5400640BF5 /* SearchViewController.swift */; };
+		BA7900DF28BCBC5400640BF5 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7900DD28BCBC5400640BF5 /* SearchViewController.xib */; };
+		BA9BEB0628BD53C7009DD9FD /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BEB0528BD53C7009DD9FD /* ItunesSearchResponse.swift */; };
+		BA9BEB0A28BD640D009DD9FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BEB0928BD640D009DD9FD /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA3426D728BDF90F0014E288 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BA49028328BB9383000370E9 /* ItunesFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA49028628BB9383000370E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA49028828BB9383000370E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA49028A28BB9383000370E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BA49028D28BB9383000370E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA49028F28BB9385000370E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA49029228BB9385000370E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA49029428BB9385000370E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +56,15 @@
 		BA4902A328BB9386000370E9 /* ItunesFetcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItunesFetcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4902A728BB9386000370E9 /* ItunesFetcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesFetcherUITests.swift; sourceTree = "<group>"; };
 		BA4902A928BB9386000370E9 /* ItunesFetcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesFetcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BA53A23728BBCD0F007FC692 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BA53A23928BBE6BF007FC692 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		BA53A23B28BBECC2007FC692 /* SongListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListCollectionViewController.swift; sourceTree = "<group>"; };
+		BA53A24228BBED6E007FC692 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		BA53A24328BBED6E007FC692 /* SongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
+		BA7900DC28BCBC5400640BF5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BA7900DD28BCBC5400640BF5 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		BA9BEB0528BD53C7009DD9FD /* ItunesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchResponse.swift; sourceTree = "<group>"; };
+		BA9BEB0928BD640D009DD9FD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +115,10 @@
 		BA49028528BB9383000370E9 /* ItunesFetcher */ = {
 			isa = PBXGroup;
 			children = (
-				BA49028628BB9383000370E9 /* AppDelegate.swift */,
-				BA49028828BB9383000370E9 /* SceneDelegate.swift */,
-				BA49028A28BB9383000370E9 /* ViewController.swift */,
-				BA49028C28BB9383000370E9 /* Main.storyboard */,
-				BA49028F28BB9385000370E9 /* Assets.xcassets */,
-				BA49029128BB9385000370E9 /* LaunchScreen.storyboard */,
-				BA49029428BB9385000370E9 /* Info.plist */,
+				BA53A23E28BBECD3007FC692 /* Model */,
+				BA53A23D28BBECCE007FC692 /* Service */,
+				BA53A23F28BBECD6007FC692 /* Modules */,
+				BAD1B20328BE0EE600018C7A /* Resources */,
 			);
 			path = ItunesFetcher;
 			sourceTree = "<group>";
@@ -125,6 +138,97 @@
 				BA4902A928BB9386000370E9 /* ItunesFetcherUITestsLaunchTests.swift */,
 			);
 			path = ItunesFetcherUITests;
+			sourceTree = "<group>";
+		};
+		BA53A23D28BBECCE007FC692 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BA53A23728BBCD0F007FC692 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BA53A23E28BBECD3007FC692 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA53A23928BBE6BF007FC692 /* Endpoint.swift */,
+				BA9BEB0528BD53C7009DD9FD /* ItunesSearchResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA53A23F28BBECD6007FC692 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BAD1B20228BE0E7900018C7A /* Application */,
+				BA9BEB0728BD62FC009DD9FD /* Tab */,
+				BA9BEB0828BD630D009DD9FD /* Favorites */,
+				BA7900DB28BCBBDF00640BF5 /* Search */,
+				BA53A24028BBED45007FC692 /* SongList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BA53A24028BBED45007FC692 /* SongList */ = {
+			isa = PBXGroup;
+			children = (
+				BA53A24128BBED5A007FC692 /* Cell */,
+				BA53A23B28BBECC2007FC692 /* SongListCollectionViewController.swift */,
+			);
+			path = SongList;
+			sourceTree = "<group>";
+		};
+		BA53A24128BBED5A007FC692 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA53A24228BBED6E007FC692 /* SongCell.swift */,
+				BA53A24328BBED6E007FC692 /* SongCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BA7900DB28BCBBDF00640BF5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BA7900DC28BCBC5400640BF5 /* SearchViewController.swift */,
+				BA7900DD28BCBC5400640BF5 /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BA9BEB0728BD62FC009DD9FD /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BA3426D728BDF90F0014E288 /* TabBarController.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		BA9BEB0828BD630D009DD9FD /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				BA9BEB0928BD640D009DD9FD /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		BAD1B20228BE0E7900018C7A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BA49028628BB9383000370E9 /* AppDelegate.swift */,
+				BA49028828BB9383000370E9 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BAD1B20328BE0EE600018C7A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA49028F28BB9385000370E9 /* Assets.xcassets */,
+				BA49029128BB9385000370E9 /* LaunchScreen.storyboard */,
+				BA49029428BB9385000370E9 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +335,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA53A24528BBED6E007FC692 /* SongCell.xib in Resources */,
 				BA49029328BB9385000370E9 /* LaunchScreen.storyboard in Resources */,
 				BA49029028BB9385000370E9 /* Assets.xcassets in Resources */,
-				BA49028E28BB9383000370E9 /* Main.storyboard in Resources */,
+				BA7900DF28BCBC5400640BF5 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +363,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49028B28BB9383000370E9 /* ViewController.swift in Sources */,
+				BA53A23C28BBECC2007FC692 /* SongListCollectionViewController.swift in Sources */,
+				BA3426D828BDF90F0014E288 /* TabBarController.swift in Sources */,
+				BA7900DE28BCBC5400640BF5 /* SearchViewController.swift in Sources */,
 				BA49028728BB9383000370E9 /* AppDelegate.swift in Sources */,
+				BA53A24428BBED6E007FC692 /* SongCell.swift in Sources */,
+				BA9BEB0628BD53C7009DD9FD /* ItunesSearchResponse.swift in Sources */,
+				BA53A23828BBCD0F007FC692 /* NetworkService.swift in Sources */,
 				BA49028928BB9383000370E9 /* SceneDelegate.swift in Sources */,
+				BA9BEB0A28BD640D009DD9FD /* FavoritesViewController.swift in Sources */,
+				BA53A23A28BBE6BF007FC692 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +409,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BA49028C28BB9383000370E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA49028D28BB9383000370E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BA49029128BB9385000370E9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,12 +543,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7V3RNWAPQ7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ItunesFetcher/Info.plist;
+				INFOPLIST_FILE = ItunesFetcher/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,12 +571,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7V3RNWAPQ7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ItunesFetcher/Info.plist;
+				INFOPLIST_FILE = ItunesFetcher/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
