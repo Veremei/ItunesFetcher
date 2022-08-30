@@ -10,7 +10,7 @@ import Combine
 
 final class FavoritesViewController: UIViewController {
 
-    let collection = SongListCollectionViewController()
+    private let collection = SongListCollectionViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +24,10 @@ final class FavoritesViewController: UIViewController {
             collection.view.topAnchor.constraint(equalTo: view.topAnchor),
             collection.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collection.updateSongs(songs: FavoritesService.shared.savedSongs) 
     }
 }

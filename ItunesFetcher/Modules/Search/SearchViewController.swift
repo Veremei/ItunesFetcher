@@ -9,9 +9,29 @@ import UIKit
 import Combine
 
 final class SearchViewController: UIViewController {
-    private var cancellables: Set<AnyCancellable> = []
 
-    let collection = SongListCollectionViewController()
+    private let collection = SongListCollectionViewController()
+
+    private(set) lazy var searchController: UISearchController = {
+        var controller = UISearchController(searchResultsController: nil)
+        controller.delegate = self
+        controller.searchResultsUpdater = self
+        controller.obscuresBackgroundDuringPresentation = false
+
+        controller.searchBar.placeholder = "Search for a song..."
+//        controller.searchBar.barTintColor = .bgPrimary
+        controller.searchBar.keyboardAppearance = .dark
+        controller.searchBar.textContentType = .none
+        controller.searchBar.autocorrectionType = .no
+        controller.searchBar.barStyle = .black
+        controller.hidesNavigationBarDuringPresentation = false
+
+        return controller
+    }()
+
+    @Published private var searchTerm = ""
+
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +45,31 @@ final class SearchViewController: UIViewController {
             collection.view.topAnchor.constraint(equalTo: view.topAnchor),
             collection.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+
+        $searchTerm
+            .debounce(for: 0.3, scheduler: RunLoop.main)
+            .sink { [weak self] query in
+                guard let self = self else {
+                    return
+                }
+
+                if query.isEmpty {
+                    self.collection.updateSongs(songs: [])
+                } else {
+                self.load(search: query)
+                }
+            }
+            .store(in: &cancellables)
     }
 
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        load()
-    }
-
-    func load() {
+    func load(search: String) {
         let endpoint = Endpoint(host: "itunes.apple.com",
                                 path: "/search",
                                 headers: [:],
-                                queryItems: [URLQueryItem(name: "term", value: "Metallica"),
+                                queryItems: [URLQueryItem(name: "term", value: search),
                                              URLQueryItem(name: "media", value: "music")])
 
         NetworkService.shared.request(endpoint: endpoint)
@@ -58,4 +90,31 @@ final class SearchViewController: UIViewController {
             }.store(in: &cancellables)
 
     }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension SearchViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let querry = searchController.searchBar.text else { return }
+//        searchListViewController.performSearch(for: querry)
+//        load(search: querry)
+        searchTerm = querry
+    }
+
+}
+
+// MARK: - UISearchControllerDelegate
+
+extension SearchViewController: UISearchControllerDelegate {
+
+    func willPresentSearchController(_ searchController: UISearchController) {
+//        searchContainerView.isHidden = false
+    }
+
+    func willDismissSearchController(_ searchController: UISearchController) {
+//        searchContainerView.isHidden = true
+    }
+
 }

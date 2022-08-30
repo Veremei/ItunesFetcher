@@ -21,6 +21,7 @@ final class SongListCollectionViewController: UIViewController {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(UINib(nibName: "SongCell", bundle: nil), forCellWithReuseIdentifier: Constants.reuseIdentifier)
+        collectionView.keyboardDismissMode = .onDrag
         return collectionView
     }()
 
@@ -65,7 +66,14 @@ extension SongListCollectionViewController: UICollectionViewDataSource {
             return cell
         }
         let item = songs[indexPath.item]
-        songCell.setup(from: item)
+        songCell.setup(from: item,
+                       isFavorite: FavoritesService.shared.savedSongs
+            .contains(where: { $0.trackId == item.trackId }))
+
+        songCell.accessoryTapped = {
+            FavoritesService.shared.save(song: item)
+        }
+
         return songCell
     }
 }

@@ -24,6 +24,7 @@
 		BA7900DF28BCBC5400640BF5 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7900DD28BCBC5400640BF5 /* SearchViewController.xib */; };
 		BA9BEB0628BD53C7009DD9FD /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BEB0528BD53C7009DD9FD /* ItunesSearchResponse.swift */; };
 		BA9BEB0A28BD640D009DD9FD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9BEB0928BD640D009DD9FD /* FavoritesViewController.swift */; };
+		BAF5B02428BE197E009736F6 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B02328BE197E009736F6 /* FavoritesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		BA7900DD28BCBC5400640BF5 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		BA9BEB0528BD53C7009DD9FD /* ItunesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchResponse.swift; sourceTree = "<group>"; };
 		BA9BEB0928BD640D009DD9FD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		BAF5B02328BE197E009736F6 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				BA53A23728BBCD0F007FC692 /* NetworkService.swift */,
+				BAF5B02328BE197E009736F6 /* FavoritesService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -162,8 +165,8 @@
 			children = (
 				BAD1B20228BE0E7900018C7A /* Application */,
 				BA9BEB0728BD62FC009DD9FD /* Tab */,
-				BA9BEB0828BD630D009DD9FD /* Favorites */,
 				BA7900DB28BCBBDF00640BF5 /* Search */,
+				BA9BEB0828BD630D009DD9FD /* Favorites */,
 				BA53A24028BBED45007FC692 /* SongList */,
 			);
 			path = Modules;
@@ -367,6 +370,7 @@
 				BA3426D828BDF90F0014E288 /* TabBarController.swift in Sources */,
 				BA7900DE28BCBC5400640BF5 /* SearchViewController.swift in Sources */,
 				BA49028728BB9383000370E9 /* AppDelegate.swift in Sources */,
+				BAF5B02428BE197E009736F6 /* FavoritesService.swift in Sources */,
 				BA53A24428BBED6E007FC692 /* SongCell.swift in Sources */,
 				BA9BEB0628BD53C7009DD9FD /* ItunesSearchResponse.swift in Sources */,
 				BA53A23828BBCD0F007FC692 /* NetworkService.swift in Sources */,
@@ -548,6 +552,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,6 +581,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -17,3 +17,13 @@ struct ItunesSearchResult: Codable {
     let trackName: String
     let artworkUrl60: String?
 }
+
+extension ItunesSearchResult: Hashable, Equatable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(trackId)
+    }
+
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.trackId == rhs.trackId
+    }
+}
