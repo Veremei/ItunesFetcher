@@ -59,6 +59,7 @@ final class SearchInteractor: SearchInteractorLogic {
     private func bind() {
         $searchTerm
             .debounce(for: 0.3, scheduler: RunLoop.main)
+            .removeDuplicates()
             .sink { [weak self] query in
                 guard let self = self else {
                     return
@@ -74,12 +75,14 @@ final class SearchInteractor: SearchInteractorLogic {
 
         storage.songContentPublisher
             .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
                 switch completion {
                 case .finished:
                     return
                 case .failure(let error):
                     print(error)
-                    self?.favorites.removeAll()
+                    self.favorites.removeAll()
+                    self.presenter?.showError(error)
                 }
             }, receiveValue: { [weak self] songs in
                 guard let self = self else { return }
@@ -101,12 +104,14 @@ final class SearchInteractor: SearchInteractorLogic {
             .receive(on: DispatchQueue.main)
             .decode(type: ItunesSearchResponse.self, decoder: JSONDecoder())
             .sink { [weak self] completion in
+                guard let self = self else { return }
                 switch completion {
                 case .finished:
                     return
                 case .failure(let error):
                     print(error)
-                    self?.songs.removeAll()
+                    self.songs.removeAll()
+                    self.presenter?.showError(error)
                 }
             } receiveValue: { [weak self] response in
                 guard let self = self else { return }

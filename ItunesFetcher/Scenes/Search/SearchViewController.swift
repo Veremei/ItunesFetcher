@@ -10,11 +10,13 @@ import Combine
 
 protocol SearchDisplayLogic: AnyObject {
     func displaySongs(viewModel: [SongContent])
+    func showError(message: String)
 }
 
 final class SearchViewController: UIViewController {
 
     var interactor: SearchInteractorLogic?
+    var router: SearchRoutingLogic?
 
     private let collection = SongListCollectionViewController()
 
@@ -46,10 +48,13 @@ final class SearchViewController: UIViewController {
         let viewController = self
         let interactor = SearchInteractor(networking: AppServices.shared.networkService,
                                           storage: AppServices.shared.favoritesStorage)
+        let router = SearchRouter()
         let presenter = SearchPresenter()
         viewController.interactor = interactor
+        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
+        router.source = viewController
     }
 
     override func viewDidLoad() {
@@ -90,5 +95,9 @@ extension SearchViewController: SongListDelegate {
 extension SearchViewController: SearchDisplayLogic {
     func displaySongs(viewModel: [SongContent]) {
         self.collection.updateSongs(songs: viewModel)
+    }
+
+    func showError(message: String) {
+        router?.showFailure(message: message)
     }
 }

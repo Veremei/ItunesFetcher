@@ -31,6 +31,8 @@
 		BAF5B03628BE41AB009736F6 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B03528BE41AB009736F6 /* Storage.swift */; };
 		BAF5B03828BE4246009736F6 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B03728BE4246009736F6 /* FavoritesStore.swift */; };
 		BAF5B03A28BE47FD009736F6 /* SongContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B03928BE47FD009736F6 /* SongContent.swift */; };
+		BAF5B03E28BE6014009736F6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BAF5B03D28BE6014009736F6 /* Kingfisher */; };
+		BAF5B04028BE631F009736F6 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5B03F28BE631F009736F6 /* SearchRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,7 @@
 		BAF5B03528BE41AB009736F6 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		BAF5B03728BE4246009736F6 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		BAF5B03928BE47FD009736F6 /* SongContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongContent.swift; sourceTree = "<group>"; };
+		BAF5B03F28BE631F009736F6 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF5B03E28BE6014009736F6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +215,7 @@
 				BA7900DC28BCBC5400640BF5 /* SearchViewController.swift */,
 				BAF5B02528BE2E27009736F6 /* SearchInteractor.swift */,
 				BAF5B02C28BE37FF009736F6 /* SearchPresenter.swift */,
+				BAF5B03F28BE631F009736F6 /* SearchRouter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -284,6 +289,9 @@
 			dependencies = (
 			);
 			name = ItunesFetcher;
+			packageProductDependencies = (
+				BAF5B03D28BE6014009736F6 /* Kingfisher */,
+			);
 			productName = ItunesFetcher;
 			productReference = BA49028328BB9383000370E9 /* ItunesFetcher.app */;
 			productType = "com.apple.product-type.application";
@@ -356,6 +364,9 @@
 				Base,
 			);
 			mainGroup = BA49027A28BB9383000370E9;
+			packageReferences = (
+				BAF5B03C28BE6014009736F6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = BA49028428BB9383000370E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -416,6 +427,7 @@
 				BA49028928BB9383000370E9 /* SceneDelegate.swift in Sources */,
 				BAF5B03328BE3D28009736F6 /* AppServices.swift in Sources */,
 				BA9BEB0A28BD640D009DD9FD /* FavoritesViewController.swift in Sources */,
+				BAF5B04028BE631F009736F6 /* SearchRouter.swift in Sources */,
 				BA53A23A28BBE6BF007FC692 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +764,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAF5B03C28BE6014009736F6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAF5B03D28BE6014009736F6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAF5B03C28BE6014009736F6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA49027B28BB9383000370E9 /* Project object */;
 }

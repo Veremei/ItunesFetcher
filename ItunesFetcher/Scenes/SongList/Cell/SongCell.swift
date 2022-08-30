@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class SongCell: UICollectionViewCell {
 
-    @IBOutlet private weak var songImageView: UIImageView!
-    @IBOutlet private weak var textStackView: UIStackView!
-    @IBOutlet private weak var songNameLabel: UILabel!
-    @IBOutlet private weak var songAuthorLabel: UILabel!
-    @IBOutlet private weak var accessoryButton: UIButton!
+    @IBOutlet private var songImageView: UIImageView!
+    @IBOutlet private var textStackView: UIStackView!
+    @IBOutlet private var songNameLabel: UILabel!
+    @IBOutlet private var songAuthorLabel: UILabel!
+    @IBOutlet private var accessoryButton: UIButton!
 
     var accessoryTapped: (() -> Void)? = nil
 
@@ -37,6 +38,20 @@ final class SongCell: UICollectionViewCell {
         songNameLabel.text = content.title
         songAuthorLabel.text = content.subtitle
         isFavorite = content.isFavorite
+        loadImage(url: content.image)
+    }
+
+    private func loadImage(url: URL?) {
+        let processor = DownsamplingImageProcessor(size: songImageView.bounds.size)
+        songImageView.kf.setImage(with: url,
+                                  placeholder: nil,
+                                  options: [
+                                    .processor(processor),
+                                    .scaleFactor(UIScreen.main.scale),
+                                    .transition(.fade(1)),
+                                    .cacheOriginalImage
+                                  ],
+                                  completionHandler: nil)
     }
 
     @IBAction private func accessoryButtonTapped(_ sender: Any) {

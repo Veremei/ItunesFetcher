@@ -9,6 +9,7 @@ import Foundation
 
 protocol SearchPresenterProtocol {
     func presentSongs(songs: [SongContent])
+    func showError(_ error: Error)
 }
 
 final class SearchPresenter: SearchPresenterProtocol {
@@ -19,4 +20,7 @@ final class SearchPresenter: SearchPresenterProtocol {
         viewController?.displaySongs(viewModel: songs)
     }
 
+    func showError(_ error: Error) {
+        viewController?.showError(message: error.localizedDescription)
+    }
 }
